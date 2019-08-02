@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_bottom_title_key_word">30dp</dimen>
+    <dimen name="margin_left_title_key_word">15dp</dimen>
+    <dimen name="margin_left_item_key_word">5dp</dimen>
+    <dimen name="margin_right_item_key_word">5dp</dimen>
+    <dimen name="padding_left_item_key_word">15dp</dimen>
+    <dimen name="padding_right_item_key_word">15dp</dimen>
+    <dimen name="height_item_key_word">50dp</dimen>
+</resources>

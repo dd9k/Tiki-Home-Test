@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:background="@drawable/key_word_green_background"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/height_item_key_word"
+                android:clickable="true"
+                android:id="@+id/btn_key_word"
+                android:focusable="true"
+                android:paddingEnd="@dimen/padding_right_item_key_word"
+                android:paddingStart="@dimen/padding_left_item_key_word"
+                android:layout_marginStart="@dimen/margin_left_item_key_word"
+                android:layout_marginEnd="@dimen/margin_right_item_key_word">
+
+    <TextView
+            android:id="@+id/tv_key_word"
+            android:textColor="@android:color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAlignment="center"/>
+
+</RelativeLayout>

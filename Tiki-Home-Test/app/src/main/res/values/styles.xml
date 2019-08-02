@@ -1,0 +1,23 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <integer-array name="key_word_backgrounds">
+        <item>@drawable/key_word_blue_background</item>
+        <item>@drawable/key_word_blue_coral_background</item>
+        <item>@drawable/key_word_brown_background</item>
+        <item>@drawable/key_word_brown_orange_background</item>
+        <item>@drawable/key_word_brown_yellow_background</item>
+        <item>@drawable/key_word_green_background</item>
+        <item>@drawable/key_word_green_leaf_background</item>
+        <item>@drawable/key_word_orange_background</item>
+        <item>@drawable/key_word_purple_background</item>
+    </integer-array>
+
+</resources>
