@@ -39,43 +39,21 @@ class KeyWordAdapter(
      * @author Diệp Đăng Khoa
      * @param keyword keyword in button
      * @return keyword have have minimum difference in length
-     * @sample keyword = nguyễn nhật ánh => nguyễn\nnhật ánh
+     * @sample keyword = "nguyễn nhật ánh" => "nguyễn\nnhật ánh"
      */
     private fun makeText(keyword: String): String {
-        var textButton = ""
-        if (keyword.isNotBlank()) {
-            val listText = keyword.split(" ")
-            when {
-                listText.size == 1 -> textButton = keyword
-                listText.size == 2 -> textButton = listText[0] + "\n" + listText[1]
-                else -> {
-                    // init minimum difference in length by max between length of the first word in list and sum of length of the others one
-                    var minLength = max(listText[0].length, keyword.replace(" ", "").length - listText[0].length)
-                    var nextLine = 0 // index next line
-                    for (i in 1 until listText.size - 1) {
-                        var firstLength = 0 // length of first line
-                        var secondLength = 0 // length of second line
-                        for (j in 0 until listText.size) {
-                            if (j <= i)
-                                firstLength += listText[j].length
-                            else secondLength += listText[j].length
-                        }
-                        if (max(firstLength, secondLength) < minLength) {
-                            minLength = max(firstLength, secondLength)
-                            nextLine = i
-                        }
-                    }
-                    for (i in 0 until listText.size) {
-                        textButton += when (i) {
-                            nextLine -> listText[i] + "\n"
-                            listText.lastIndex -> listText[i]
-                            else -> listText[i] + " "
-                        }
-                    }
-                }
+        // remove leading, trailing and duplicate whitespace
+        val convertKeyword = keyword.trim().replace("( ) +".toRegex(), " ")
+        var min = convertKeyword.length
+        var temp = 0
+        convertKeyword.forEachIndexed { index, char ->
+            if (char == ' ' && max(index, convertKeyword.length - index) < min) {
+                min = max(index, convertKeyword.length - index)
+                temp = index
             }
         }
-        return textButton
+        return if (temp == 0) convertKeyword
+        else convertKeyword.substring(0, temp) + '\n' + convertKeyword.substring(temp + 1)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)

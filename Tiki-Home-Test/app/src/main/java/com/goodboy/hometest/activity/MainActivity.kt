@@ -11,7 +11,7 @@ import com.google.gson.reflect.TypeToken
 
 class MainActivity : AppCompatActivity() {
 
-    var keyWordList: ArrayList<String> = ArrayList()
+    private var keyWordList: ArrayList<String> = ArrayList()
     private val keywordsJson = "[\"xiaomi\",\"bitis hunter\",\"bts\",\"balo\",\"bitis hunter x\",\"tai nghe\",\"harry potter\",\"anker\",\"iphone\",\"balo nữ\",\"nguyễn nhật ánh\",\"đắc nhân tâm\",\"ipad\",\"senka\",\"tai nghe bluetooth\",\"son\",\"maybelline\",\"laneige\",\"kem chống nắng\",\"anh chính là thanh xuân của em\"]"
 
     override fun onCreate(savedInstanceState: Bundle?) {
