@@ -45,15 +45,15 @@ class KeyWordAdapter(
         // remove leading, trailing and duplicate whitespace
         val convertKeyword = keyword.trim().replace("( ) +".toRegex(), " ")
         var min = convertKeyword.length
-        var temp = 0
+        var endIndex = 0 // end line index
         convertKeyword.forEachIndexed { index, char ->
             if (char == ' ' && max(index, convertKeyword.length - index) < min) {
                 min = max(index, convertKeyword.length - index)
-                temp = index
+                endIndex = index
             }
         }
-        return if (temp == 0) convertKeyword
-        else convertKeyword.substring(0, temp) + '\n' + convertKeyword.substring(temp + 1)
+        return if (endIndex == 0) convertKeyword
+        else convertKeyword.substring(0, endIndex) + '\n' + convertKeyword.substring(endIndex + 1)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
