@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         val adapter = KeyWordAdapter(this, keyWordList)
         rv_key_word.adapter = adapter
-        rv_key_word.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+        rv_key_word.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true)
     }
 }
 
